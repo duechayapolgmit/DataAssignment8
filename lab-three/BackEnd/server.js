@@ -141,7 +141,7 @@ app.put('/api/book/:id',(req, res)=>{
 
 // GET request, for name
 app.get('/name', (req,res)=> {
-    res.send('Hello '+req.query.f4rstName+' '+req.query.lastName);
+    res.send('Hello '+req.query.firstName+' '+req.query.lastName);
 });
 // POST request, for name -- more secure
 app.post('/name', (req,res)=> {
