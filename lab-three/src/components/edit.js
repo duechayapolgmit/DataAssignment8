@@ -36,14 +36,17 @@ export function Edit(props) {
             console.log(error);
         })
     }, []);
+    // executes when the submit button is clicked
     const handleSubmit = (event) => {
         event.preventDefault();
+        // newbook constant object
         const newBook = {
             id: id,
             title: title,
             cover: cover,
             author: author
         };
+        // PUT request to edit/update the book. Then, navigate to read page
         axios.put('http://localhost:4000/api/book/' + id, newBook)
             .then((res) => {
                 console.log(res.data);
