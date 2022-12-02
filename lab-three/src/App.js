@@ -16,6 +16,7 @@ import {
 import { Read } from './components/read';
 import { Create } from './components/create';
 import {FCreate} from './components/fcreate';
+import { Edit } from './components/edit';
 
 class App extends React.Component {
   render() {
@@ -38,6 +39,7 @@ class App extends React.Component {
         <Route path='/read' element={<Read/>}></Route>
         <Route path='/create' element={<Create/>}></Route>
         <Route path='/fcreate' element={<FCreate/>}></Route>
+        <Route path="/edit/:id" element={<Edit/>}></Route>
       </Routes>
         {/* <Header></Header>
         <Content></Content>

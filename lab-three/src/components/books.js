@@ -1,5 +1,6 @@
 import React from "react";
 import Card from 'react-bootstrap/Card';
+import { Link } from "react-router-dom";
 
 // List all books via looping through each book
 export class Books extends React.Component{
@@ -24,13 +25,14 @@ class BookItem extends React.Component {
                 <Card>
             <Card.Header>{this.props.book.title}</Card.Header>
                     <Card.Body>
-       <blockquote className="blockquote mb-0">
-            <img src={this.props.book.cover}></img>
-            <footer >
-                {this.props.book.author}
+            <blockquote className="blockquote mb-0">
+                    <img src={this.props.book.cover}></img>
+                    <footer >
+                        {this.props.book.author}
                     </footer>
                         </blockquote>
                     </Card.Body>
+                    <Link to={'/edit/'+this.props.book._id} className="btn btn-primary">Edit</Link>
                 </Card>
             </div>
         );

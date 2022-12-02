@@ -124,6 +124,19 @@ app.post('/api/books', (req, res)=>{
     res.send("Data Received");
 })
 
+// PUT request, update the book by finding the ID and update
+app.put('/api/book/:id',(req, res)=>{
+    // Log in the ID and body of request to update
+    console.log("Update: "+req.params.id);
+    console.log(req.body);
+
+    // Find book by ID and update data
+    bookModel.findByIdAndUpdate(req.params.id,req.body,{new:true},
+        (error,data)=>{
+        res.send(data);
+        })
+})
+
 /* FORM HANDLING */
 
 // GET request, for name
